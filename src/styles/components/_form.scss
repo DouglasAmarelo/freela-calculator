@@ -1,0 +1,35 @@
+@charset 'UTF-8';
+
+//------------------------------------
+//  FORM
+//------------------------------------
+
+
+.form {
+	background-color: #ccc;
+	padding: 20px 40px 40px;
+
+	h1 {
+		margin: 0 0 15px 0;
+		padding: 0;
+	}
+
+	.form__input-mask {
+
+		&:before {
+			content: 'R$ ';
+			display: inline-block;
+			margin-right: 5%;
+			width: 12%;
+		}
+	}
+
+	input {
+		font-size: 14px;
+		display: inline-block;
+		height: 60px;
+		margin: .5em 0;
+		padding: 5px 20px;
+		width: 82%;
+	}
+}
