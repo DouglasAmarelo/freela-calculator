@@ -41,24 +41,36 @@
 <body>
 
 	<div class="container">
-		<form action="" class="form" method="">
-			<div class="row middle-xs center-xs">
-				<div class="col-xs">
-					<h1><!-- Freela calculator --></h1>
-					<h1>Lorem ipsum dolor sit amet.</h1>
-
+		<div class="row box middle-xs center-xs">
+			<form action="" class="form" method="">
+				<div class="col-xs-12">
+					<h1>Freela calculator</h1>
 					<div class="form__input-mask">
 						<input type="number" name="" id="" placeholder="Salário" />
 					</div>
 					<div class="form__input-mask">
 						<input type="number" name="" id="" placeholder="Valor hora" />
 					</div>
-					<div class="form__input-mask">
+					<div class="form__input-mask form__input-mask--horas ">
 						<input type="number" name="" id="" placeholder="Horas trabalhadas" />
 					</div>
 				</div>
-			</div>
-		</form>
+
+				<div class="col-xs-12">
+							<button class="form__calcular" type="submit">Calcular</button>
+
+							<br>
+							<br>
+
+							<div class="form__total">
+								<p>Custo total: <strong>R$ 000,00</strong></p>
+							</div>
+
+					<div class="row middle-xs">
+					</div>
+				</div>
+			</form>
+		</div>
 	</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>

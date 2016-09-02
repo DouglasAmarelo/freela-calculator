@@ -8,7 +8,7 @@ body {
 	background-color: #f1f1f1;
 
 	&,
-	.box {
+	& > .box {
 		height: 100vh;
 	}
 }
@@ -64,5 +64,7 @@ body {
 		padding: 5px 20px 5px 70px;
 	}
 
-	// .form__calcular { }
+	.form__calcular {
+		background-color: #0d0;
+	}
 }

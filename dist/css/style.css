@@ -423,24 +423,50 @@ img.full-width {
   position: relative;
   width: 90%; }
 
+body {
+  background-color: #f1f1f1; }
+  body,
+  body .box {
+    height: 100vh; }
+
 .form {
-  background-color: #ccc;
-  padding: 20px 40px 40px; }
+  background-color: #fff;
+  box-shadow: 0 1px 2px #aaa;
+  padding: 35px 20px;
+  width: 100%; }
   .form h1 {
-    margin: 0 0 15px 0;
-    padding: 0; }
-  .form .form__input-mask:before {
-    content: 'R$ ';
-    display: inline-block;
-    margin-right: 5%;
-    width: 12%; }
+    font-size: 1.75em;
+    margin: 0;
+    margin-bottom: 15px; }
+  .form .form__input-mask {
+    position: relative;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    overflow: hidden; }
+    .form .form__input-mask:before {
+      font-size: 1.125em;
+      content: "";
+      display: block;
+      position: absolute;
+      background-color: #ccc;
+      content: 'R$';
+      height: 50px;
+      line-height: 50px;
+      margin-right: 4%;
+      top: 0;
+      width: 50px; }
+    .form .form__input-mask.form__input-mask--horas:before {
+      font-size: 1.375em;
+      content: '\231A'; }
+  .form input,
+  .form button {
+    font-size: 0.9375em;
+    border: none;
+    height: 50px;
+    width: 100%; }
   .form input {
-    font-size: 14px;
-    display: inline-block;
-    height: 60px;
-    margin: .5em 0;
-    padding: 5px 20px;
-    width: 82%; }
+    background-color: #f1f1f1;
+    padding: 5px 20px 5px 70px; }
 
 /*=====  End of JUSSI  ======*/
 
