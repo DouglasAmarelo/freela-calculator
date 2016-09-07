@@ -5,13 +5,13 @@
 	"description": "Calculadora de horas trabalhadas para freelancer",
 	"manifest_version": 2,
 	"icons": {
-		"32"  : "ico_32.png",
-		"128" : "ico_128.png"
+		"32"  : "images/ico_32.png",
+		"128" : "images/ico_128.png"
 	},
 	"browser_action": {
-		"default_icon"  : "ico_32.png",
+		"default_icon"  : "images/ico_32.png",
 		"default_title" : "Freela calculator | Jüssi",
-		"default_popup" : "popup.html"
+		"default_popup" : "index.html"
 	},
 	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
