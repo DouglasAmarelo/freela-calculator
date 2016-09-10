@@ -1,0 +1,21 @@
+@charset 'UTF-8';
+
+//------------------------------------
+//  Copy
+//------------------------------------
+
+.copy {
+	font-size: 12px;
+
+	a {
+		color: #444;
+		display: inline-block;
+		text-decoration: none;
+		transition: letter-spacing .3s ease;
+
+		&:hover {
+			letter-spacing: 1px;
+			text-decoration: underline;
+		}
+	}
+}
