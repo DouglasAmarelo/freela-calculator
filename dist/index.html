@@ -12,16 +12,16 @@
 	<!-- Mobile -->
 	<meta name="theme-color" content="#ff7900" />
 	<meta name="mobile-web-app-capable" content="yes" />
-	<meta name="application-name" content="Freela calculator | Jüssi" />
+	<meta name="application-name" content="Freela calculator" />
 
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="#ff7900" />
-	<meta name="apple-mobile-web-app-title" content="Freela calculator | Jüssi" />
+	<meta name="apple-mobile-web-app-title" content="Freela calculator" />
 
 	<meta name="msapplication-TileColor" content="#ff7900" />
 	<meta name="msapplication-TileImage" content="images/icon_32.png" />
 
-	<title>Bandeiras de cartões aceitas pela Rede | Bandeiras Rede</title>
+	<title>Freela Calculator</title>
 
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
@@ -32,58 +32,52 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="images/icon_32.png" />
 
 	<link rel="stylesheet" type="text/css" href="css/style.css" charset="utf-8" />
-
-	<!--[if lt IE 9]>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
 </head>
 <body>
+<div class="container">
+	<div class="form_container">
 
-	<div class="container">
-		<div class="row box middle-xs center-xs">
-			<form action="#" class="form">
-				<div class="col-xs-12">
-					<h1>Freela calculator</h1>
-					<div class="form__input-mask">
-						<input type="number" name="valor-salario" id="valor-salario" placeholder="Salário" value="0" />
-					</div>
-					<div class="form__input-mask">
-						<input type="number" name="valor-hora" id="valor-hora" placeholder="Valor hora" value="0" />
-					</div>
-					<div class="form__input-mask form__input-mask--horas ">
-						<input type="number" name="horas-trabalhadas" id="horas-trabalhadas" placeholder="Horas trabalhadas" value="0" />
-					</div>
-				</div>
+		<form action="#" class="form">
+			<h1>Freela calculator</h1>
 
-				<div class="row end-xs">
-					<div class="col-xs-12">
-						<button class="form__limpar" type="reset">Limpar</button>
-
-						<button class="form__calcular">Calcular</button>
-					</div>
-				</div>
-
-				<!-- Total -->
-				<div class="total">
-					<div class="row middle-xs">
-						<div class="col-xs">
-							<p>Valor total:</p>
-
-							<strong>R$ <span class="total__val">0</span></strong>
-						</div>
-					</div>
-				</div>
-			</form>
-
-
-			<div class="copy">
-				By: <a href="http://douglasamarelo.com/" title="@DouglasAmarelo" target="_blank">@DouglasAmarelo</a>
+			<!-- Valor do salário -->
+			<div class="form__input-mask">
+				<input type="number" name="valor-salario" id="valor-salario" placeholder="Salário" value="0" />
 			</div>
+
+			<!-- Valor da hora -->
+			<div class="form__input-mask">
+				<input type="number" name="valor-hora" id="valor-hora" placeholder="Valor hora" value="0" />
+			</div>
+
+			<!-- Horas trabalhadas -->
+			<div class="form__input-mask form__input-mask--horas ">
+				<input type="number" name="horas-trabalhadas" id="horas-trabalhadas" placeholder="Horas trabalhadas" value="0" />
+			</div>
+
+			<!-- Botões de ação -->
+			<div class="form__actions">
+				<button class="form-limpar" type="reset">Limpar</button>
+
+				<button class="form-calcular">Calcular</button>
+			</div>
+
+			<!-- Total -->
+			<div class="total">
+				<p>Valor total:</p>
+
+				<strong>R$ <span class="total__val">0</span></strong>
+			</div>
+		</form>
+
+		<!-- @DouglasAmarelo -->
+		<div class="copy">
+			By: <a href="http://douglasamarelo.com/" title="@DouglasAmarelo" target="_blank">@DouglasAmarelo</a>
 		</div>
 	</div>
+</div>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-	<script src="js/app.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="js/app.min.js"></script>
 </body>
 </html>

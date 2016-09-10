@@ -4,8 +4,8 @@ var valorSalario     = $('#valor-salario'),
 	valorHora        = $('#valor-hora'),
 	horasTrabalhadas = $('#horas-trabalhadas'),
 	valorTotal       = $('.total__val'),
-	limpaCampos      = $('.form__limpar'),
-	calcular         = $('.form__calcular');
+	limpaCampos      = $('.form-limpar'),
+	calcular         = $('.form-calcular');
 
 
 var escreveValor = function(valor) {
@@ -46,6 +46,7 @@ valorSalario.on('keyup change', function() {
 
 horasTrabalhadas.on('keyup change', function() {
 	somaHorasTrabalhadas();
+	somaSalario();
 });
 
 limpaCampos.click(function() {

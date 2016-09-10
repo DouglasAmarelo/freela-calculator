@@ -7,9 +7,18 @@
 body {
 	background-color: #65bd48;
 	font-family: 'Courier New';
+	height: 100vh;
 
-	&,
-	.box { height: 100vh; }
+	// &,
+	// .box { height: 100vh; }
+}
+
+.form_container {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	justify-content: center;
 }
 
 .form {
@@ -19,6 +28,7 @@ body {
 	overflow: hidden;
 	padding: 20px 20px 10px 20px;
 	position: relative;
+	text-align: center;
 	width: 100%;
 
 	h1 {
@@ -51,7 +61,6 @@ body {
 				@include font-responsive(20);
 				content: '\231A';
 				line-height: 50px;
-				text-indent: 2px;
 			}
 		}
 	}
@@ -86,8 +95,12 @@ body {
 		&:focus { border-color: #ccc; }
 	}
 
-	.form__limpar,
-	.form__calcular {
+	.form__actions {
+		text-align: right;
+	}
+
+	.form-limpar,
+	.form-calcular {
 		border: 0;
 		color: #a1a1a1;
 		cursor: pointer;
@@ -98,7 +111,8 @@ body {
 
 		&:hover { color: #444; }
 	}
-	.form__calcular {
+
+	.form-calcular {
 		background-color: #00b241;
 		color: #fff;
 	}
@@ -109,14 +123,13 @@ body {
 	p {
 		border-top: 1px solid #ccc;
 		font-size: 13px;
-		margin: 10px 10px 0 10px;
+		margin: 10px 0 0 0;
 		padding-top: 10px;
 		text-transform: uppercase;
 	}
 }
 
 .total__val {
-	// color: #00b241;
 	display: inline-block;
 	font-size: 40px;
 	vertical-align: middle;
