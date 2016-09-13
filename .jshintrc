@@ -12,10 +12,5 @@
 	"undef": true,
 	"unused": true,
 	
-	"globals": {
-		"$": true,
-		"define": true,
-		"dataLayer": true,
-		"FB": true
-	}
+	"globals": {}
 }

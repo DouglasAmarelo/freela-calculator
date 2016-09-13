@@ -1,7 +1,7 @@
 {
 	"name": "Freela calculator",
 	"short_name": "Freela calculator",
-	"version": "1.0.1",
+	"version": "1.0",
 	"description": "Calculadora de horas trabalhadas para freelancer",
 	"manifest_version": 2,
 	"icons": {
@@ -13,5 +13,5 @@
 		"default_title" : "Freela calculator | Jüssi",
 		"default_popup" : "index.html"
 	},
-	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+	"content_security_policy": "script-src 'self' 'sha256-hoy/ZSKw/MBWnSwsOkPiBLhnF1eucUVoNQ1EDNaxEdQ=' https://www.google-analytics.com; object-src 'self'"
 }
