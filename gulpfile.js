@@ -9,8 +9,7 @@ var gulp		 = require('gulp'),
 	browserSync  = require('browser-sync'),
 	named		 = require('vinyl-named'),
 	path		 = require('path'),
-	webpack 	 = require('webpack-stream'),
-	pkg			 = require('./package.json');
+	webpack 	 = require('webpack-stream');
 
 var paths = {
 	webpack : 'src/scripts/*.js',
@@ -22,7 +21,8 @@ var paths = {
 		scripts : 'dist/js',
 		styles  : 'dist/css',
 		images  : 'dist/images',
-		extras  : 'dist'
+		extras  : 'dist',
+		build: [ 'dist/**', '!dist/**/*.map' ]
 	}
 };
 
@@ -40,9 +40,6 @@ gulp.task('scripts', ['lint'], function () {
 		.pipe(webpack({
 			output: {
 				filename: '[name].min.js'
-			},
-			externals: {
-				'jquery': 'jQuery'
 			},
 			resolve: {
 				root: path.resolve('./src/scripts'),
@@ -139,7 +136,25 @@ gulp.task('default', ['clean'], function () {
 	gulp.start('serve');
 });
 
+gulp.task('bump', function(){
+	return gulp.src('./package.json')
+		.pipe($.bump())
+		.pipe(gulp.dest('.'));
+});
+
+gulp.task('zip', function(){
+	var pkg	 = require('./package.json');
+	return gulp
+		.src(paths.dest.build)
+		.pipe($.zip('build-v' + pkg.version + '.zip'))
+		.pipe(gulp.dest('build'));
+});
+
+gulp.task('build', ['scripts', 'styles', 'images', 'extras', 'bump'], function() {
+	gulp.start('zip');
+});
+
 gulp.task('deploy', ['clean'], function () {
 	$.util.env.production = true;
-	gulp.start(['scripts', 'styles', 'images', 'extras']);
+	gulp.start('build');
 });
