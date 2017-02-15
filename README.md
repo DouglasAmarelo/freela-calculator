@@ -1,6 +1,8 @@
 #Freela-calculator
 A ideia dessa calculadora é conseguir estimar um valor ideal para ser cobrado em nossos trabalhos freelancers.
 
+Link: [Freela calculator](https://douglasamarelo.github.io/freela-calculator/ "Freela Calculator")
+
 Os dados necessários para esse cálculo vem de 3 campos:
  * Salário
  * Valore hora
