@@ -18,9 +18,10 @@ var resetValues = function() {
 };
 
 var updateDom = function() {
-	var total = valorHora.value * quantHora.value;
 	valorSalario.value =  valorSalario.value > 0 ? valorHora.value * 160 : '';
-	valorTotal.textContent = total;
+	valorTotal.textContent = handlePercentage().toFixed(2);
+
+	console.log('Dom updated!');
 };
 
 var handleSalary = function () {
@@ -45,31 +46,29 @@ var handlePercentage = function() {
 	var porcentagem = percentual.value;
 	var total = valorHora.value * quantHora.value;
 
-	if ( porcentagem != '' && porcentagem != 0) {
+	if ( porcentagem != '' && porcentagem != 0 ) {
 		if ( porcentagem > 0 ) {
 			porcentagem = (total * porcentagem) / 100;
-			porcentagem = parseInt(total) + parseInt(porcentagem);
+			porcentagem = total + porcentagem;
 		}
 		else if ( porcentagem < 0 ) {
 			porcentagem = (total * porcentagem) / 100;
-			porcentagem = parseInt(total) - parseInt(Math.abs(porcentagem));
+			porcentagem = total - Math.abs(porcentagem);
 		}
 
-		valorTotal.textContent = porcentagem;
-	}
-	else if (porcentagem != '' && porcentagem == 0) {
-		valorTotal.textContent = total;
+		return porcentagem;
 	}
 	else {
-		valorTotal.textContent = total;
+
+		return total;
 	}
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-	$('valor-salario').bind('input', handleSalary ).bind('change', handleSalary);
-	$('valor-hora').bind('input', updateDom ).bind('change', updateDom);
-	$('horas-trabalhadas').bind('input', handleHour ).bind('change', handleHour);
-	$('percentual').bind('input', handlePercentage ).bind('change', handlePercentage);
+	$('valor-salario').bind('keyup', handleSalary ).bind('change', handleSalary);
+	$('valor-hora').bind('keyup', updateDom ).bind('change', updateDom);
+	$('horas-trabalhadas').bind('keyup', handleHour ).bind('change', handleHour);
+	$('percentual').bind('keyup', updateDom ).bind('change', updateDom);
 
 	$('clear').bind('click', resetValues);
 
