@@ -2,109 +2,76 @@
 
 var $ = require('app/helpers');
 
-var data = {};
-
-var updateDom = function() {
-	//console.log(data);
-	$('valor-salario').value = data.salary;
-	$('valor-hora').value = data.price;
-	$('valor-total').innerText = data.price * data.hour;
-};
-
-var handleSalary = function() {
-	data.salary = this.value;
-	data.price = (data.salary / 160 ) * 2;
-	updateDom();
-};
-
-var handlePrice = function() {
-	data.price = this.value;
-	data.salary = (data.price * 160 ) / 2;
-	updateDom();
-};
-
-var handleHours = function() {
-	data.hour = this.value;
-	updateDom();
-};
+var valorSalario = document.querySelector('#valor-salario');
+var valorHora    = document.querySelector('#valor-hora');
+var quantHora    = document.querySelector('#horas-trabalhadas');
+var percentual   = document.querySelector('#percentual');
+var valorTotal   = document.querySelector('#valor-total');
 
 var resetValues = function() {
-	data = {
-		salary: 0,
-		price: 0,
-		hour: 0
-	};
+	valorSalario.value = '';
+	valorHora.value    = '';
+	quantHora.value    = '';
+	percentual.value   = '';
 
 	updateDom();
 };
 
-document.addEventListener('DOMContentLoaded', function () {
-	$('valor-salario').bind('keyup', handleSalary ).bind('change', handleSalary );
-	$('valor-hora').bind('keyup', handlePrice ).bind('change', handlePrice );
-	$('horas-trabalhadas').bind('keyup', handleHours ).bind('change', handleHours );
-
-	$('clear').bind('click', resetValues);
-	resetValues();
-});
-
-
-/*
-var valorSalario     = $('#valor-salario'),
-	valorHora        = $('#valor-hora'),
-	horasTrabalhadas = $('#horas-trabalhadas'),
-	valorTotal       = $('.total__val'),
-	limpaCampos      = $('.form-limpar'),
-	calcular         = $('.form-calcular');
-
-
-var escreveValor = function(valor) {
-	valorTotal.text(valor);
+var updateDom = function() {
+	var total = valorHora.value * quantHora.value;
+	valorSalario.value =  valorSalario.value > 0 ? valorHora.value * 160 : '';
+	valorTotal.textContent = total;
 };
 
-var verificaCampo = function(campo) {
-	if (campo !== '') {
-		return campo.val();
+var handleSalary = function () {
+	valorHora.value = valorSalario.value / 160;
+	quantHora.value = 160;
+
+	updateDom();
+}
+
+var handleHour = function () {
+	if ( this.value != 160 ) {
+		valorSalario.value = '';
+	}
+	else {
+		valorSalario.value = valorHora.value * 160;
+	}
+
+	updateDom();
+}
+
+var handlePercentage = function() {
+	var porcentagem = percentual.value;
+	var total = valorHora.value * quantHora.value;
+
+	if ( porcentagem != '' && porcentagem != 0) {
+		if ( porcentagem > 0 ) {
+			porcentagem = (total * porcentagem) / 100;
+			porcentagem = parseInt(total) + parseInt(porcentagem);
+		}
+		else if ( porcentagem < 0 ) {
+			porcentagem = (total * porcentagem) / 100;
+			porcentagem = parseInt(total) - parseInt(Math.abs(porcentagem));
+		}
+
+		valorTotal.textContent = porcentagem;
+	}
+	else if (porcentagem != '' && porcentagem == 0) {
+		valorTotal.textContent = total;
+	}
+	else {
+		valorTotal.textContent = total;
 	}
 };
 
-var somaSalario = function() {
-	var valor = verificaCampo(valorHora);
-		valor = valor * 160;
+document.addEventListener('DOMContentLoaded', function () {
+	$('valor-salario').bind('input', handleSalary ).bind('change', handleSalary);
+	$('valor-hora').bind('input', updateDom ).bind('change', updateDom);
+	$('horas-trabalhadas').bind('input', handleHour ).bind('change', handleHour);
+	$('percentual').bind('input', handlePercentage ).bind('change', handlePercentage);
 
-	valorSalario.val(valor / 2);
-};
+	$('clear').bind('click', resetValues);
 
-var somaValorHora = function() {
-	var valor = verificaCampo(valorSalario);
-		valor = valor / 160;
-
-	valorHora.val(valor * 2);
-};
-
-var somaHorasTrabalhadas = function() {
-	var valor = verificaCampo(horasTrabalhadas);
-
-	valor = valor * valorHora.val();
-
-	escreveValor(valor);
-};
-
-valorSalario.on('keyup change', function() {
-	somaValorHora();
+	resetValues();
 });
-
-horasTrabalhadas.on('keyup change', function() {
-	somaHorasTrabalhadas();
-	somaSalario();
-});
-
-limpaCampos.click(function() {
-	valorTotal.text('0');
-});
-
-calcular.click(function(e) {
-	e.preventDefault();
-	somaHorasTrabalhadas();
-	somaSalario();
-});
-*/

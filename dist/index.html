@@ -2,34 +2,13 @@
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="description" content="Calculadora de horas trabalhadas para freelancer." />
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
 
 	<meta name="robots" content="index,follow,noodp" />
 	<meta name="googlebot" content="index,follow" />
 
-	<!-- Mobile -->
-	<meta name="theme-color" content="#ff7900" />
-	<meta name="mobile-web-app-capable" content="yes" />
-	<meta name="application-name" content="Freela calculator" />
-
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="#ff7900" />
-	<meta name="apple-mobile-web-app-title" content="Freela calculator" />
-
-	<meta name="msapplication-TileColor" content="#ff7900" />
-	<meta name="msapplication-TileImage" content="images/icon_32.png" />
-
 	<title>Freela Calculator</title>
-
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-
-	<link rel="apple-touch-icon" sizes="16x16" href="images/icon_16.png" />
-	<link rel="apple-touch-icon" sizes="32x32" href="images/icon_32.png" />
-
-	<link rel="icon" type="image/png" sizes="16x16" href="images/icon_16.png" />
-	<link rel="icon" type="image/png" sizes="32x32" href="images/icon_32.png" />
 
 	<link rel="stylesheet" type="text/css" href="css/style.css" charset="utf-8" />
 
@@ -46,30 +25,32 @@
 <body>
 	<div class="container">
 		<div class="form_container">
-
 			<form action="#" class="form">
 				<h1>Freela calculator</h1>
 
 				<!-- Valor do salário -->
 				<div class="form__input-mask">
-					<input type="number" name="valor-salario" id="valor-salario" placeholder="Salário" value="0" min="0" />
+					<input type="number" name="valor-salario" id="valor-salario" placeholder="Salário estimado/pretendido" value="" min="0" />
 				</div>
 
 				<!-- Valor da hora -->
 				<div class="form__input-mask">
-					<input type="number" name="valor-hora" id="valor-hora" placeholder="Valor hora" value="0" min="0" />
+					<input type="number" name="valor-hora" id="valor-hora" placeholder="Valor hora" value="" min="0" />
 				</div>
 
 				<!-- Horas trabalhadas -->
 				<div class="form__input-mask form__input-mask--horas ">
-					<input type="number" name="horas-trabalhadas" id="horas-trabalhadas" placeholder="Horas trabalhadas" value="0" min="0" />
+					<input type="number" name="horas-trabalhadas" id="horas-trabalhadas" placeholder="Horas trabalhadas" value="" min="0" />
+				</div>
+
+				<!-- Percentual -->
+				<div class="form__input-mask form__input-mask--percentual ">
+					<input type="number" name="percentual" id="percentual" placeholder="Desconto/Acréscimo" value="" min="-50" max="50" />
 				</div>
 
 				<!-- Botões de ação -->
 				<div class="form__actions">
 					<button class="form-limpar" type="reset" id="clear" >Limpar</button>
-
-					<button class="form-calcular">Calcular</button>
 				</div>
 
 				<!-- Total -->
@@ -86,7 +67,7 @@
 			</div>
 		</div>
 	</div>
-	<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>-->
+
 	<script src="js/app.min.js"></script>
 </body>
 </html>

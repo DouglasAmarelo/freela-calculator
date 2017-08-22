@@ -1,7 +1,7 @@
 {
   "name": "freela-calculator",
   "description": "Freela calculator | Jüssi",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Douglas \"Amarelo\" Lopes",
   "private": true,
   "dependencies": {

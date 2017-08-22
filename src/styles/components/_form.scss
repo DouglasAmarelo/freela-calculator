@@ -9,31 +9,29 @@ body {
 	font-family: 'Courier New';
 	min-height: 405px;
 	width: 360px;
-
-	// &,
-	// .box { height: 100vh; }
 }
 
 .form_container {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	padding-top: 20px;
 	justify-content: center;
+	padding-top: 20px;
 }
 
 .form {
 	background-color: #fff;
 	box-shadow: 0 1px 5px #444;
-	max-width: 320px;
+	max-width: 330px;
 	overflow: hidden;
-	padding: 20px 20px 10px 20px;
+	padding: 15px 15px 5px 15px;
 	position: relative;
 	text-align: center;
 	width: 100%;
 
 	h1 {
 		@include font-responsive(23);
+		line-height: 16px;
 		margin: 0;
 		margin-bottom: 12px;
 	}
@@ -49,26 +47,30 @@ body {
 			background-color: #d9d9d9;
 			content: 'R$';
 			font-weight: bold;
-			height: 45px;
+			height: 38px;
 			left: 1px;
-			line-height: 45px;
+			line-height: 38px;
 			margin-right: 4%;
 			top: 1px;
-			width: 45px;
+			width: 40px;
 		}
 
 		&.form__input-mask--horas {
 			&:before {
 				@include font-responsive(20);
 				content: '\231A';
-				line-height: 50px;
+				line-height: 42px;
 			}
+		}
+
+		&.form__input-mask--percentual {
+			&:before { content: '[%]'; }
 		}
 	}
 
 	input,
 	button {
-		@include font-responsive(15);
+		@include font-responsive(14);
 		background-color: #eee;
 		border: none;
 		font-family: 'Courier New';
@@ -79,8 +81,9 @@ body {
 	input {
 		border: 1px solid #fff;
 		color: #444;
-		height: 47px;
-		padding: 5px 20px 5px 70px;
+		height: 40px;
+		letter-spacing: -1px;
+		padding: 11px 5px 11px 50px;
 		transition:
 			border-color .3s ease,
 			text-indent .3s ease
@@ -90,33 +93,29 @@ body {
 		&:hover,
 		&:focus {
 			border-color: #e5e5e5;
-			text-indent: 7px;
+			letter-spacing: 0;
+			text-indent: 5px;
 		}
 
 		&:focus { border-color: #ccc; }
 	}
 
-	.form__actions {
-		text-align: right;
-	}
+	.form__actions { text-align: right; }
 
 	.form-limpar,
 	.form-calcular {
 		border: 0;
-		color: #a1a1a1;
+		color: #fff;
 		cursor: pointer;
 		display: inline-block;
 		font-size: 11px;
-		margin: 0 10px 0 0;
-		padding: 2px 10px;
+		margin: 0;
+		padding: 5px 10px;
 
 		&:hover { color: #444; }
 	}
 
-	.form-calcular {
-		background-color: #00b241;
-		color: #fff;
-	}
+	.form-limpar { background-color: #00b241; }
 }
 
 

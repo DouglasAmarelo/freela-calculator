@@ -10,11 +10,11 @@
 // that key's value. If an explicit value is set (ex: 360px)
 // then a media query is output with that value.
 //
-// Parameters: 
+// Parameters:
 //  $point: the breakpoint value for the media query output
 //  $min-max: set whether `min` or `max` is used (default is `min`)
 //
-// Example: 
+// Example:
 //  `@include breakpoint(extra-small) { ... }`
 //
 //  `@include breakpoint(360px, max) { ... }`
@@ -42,13 +42,13 @@
 // value, and set of breakpoints. Allows you to easily change
 // property values based a set of breakpoints.
 //
-// Parameters: 
+// Parameters:
 //  $properties: what CSS property to output inside of the media queries (can have multiple)
 //  $values: the value for each property (can have multiple)
 //  $responsive-values: what breakpoints to generate media queries for
 //  $use-available-mixins: whether or not to use mixin outputs for properties like `font-size` or `line-height` (default is true)
 //
-// Example: 
+// Example:
 //  @include responsive('font-size', 11px,
 //    (
 //      'small' : 12px,
